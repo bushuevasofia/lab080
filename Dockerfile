@@ -1,7 +1,6 @@
-# Базовый образ с более новым cmake
 FROM ubuntu:20.04
 
-# Установка зависимостей (добавляем tzdata для корректной работы временной зоны)
+# Установка зависимостей 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
@@ -30,3 +29,5 @@ VOLUME /home/logs
 
 # Запуск демо-приложения
 CMD ["./_build/demo"]
+
+RUN mkdir -p /home/logs && chmod 777 /home/logs
