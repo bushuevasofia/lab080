@@ -1,0 +1,2 @@
+echo "_build" > .dockerignore
+echo ".git" >> .dockerignore
